@@ -35,8 +35,8 @@ function App() {
 
         axios.get(url)
           .then(res => {
-            const cel = res.data.main.temp - 273.15
-            const fah = cel * 9/5 + 32
+            const cel = (res.data.main.temp - 273.15).toFixed(2)
+            const fah = (cel * 9/5 + 32).toFixed(2)
             setTemp ({cel, fah})
             setWeather(res.data)
           })
